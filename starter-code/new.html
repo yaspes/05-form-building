@@ -12,6 +12,20 @@
     <!-- NOTE (stretch goal): To fully incorporate the highlighting library "hljs" we need to fill the empty link tag below to refer to a CSS file that will handle our text highlighting -->
     <link>
     <!-- TODO: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
+    <!-- Need "#article-template" here, Make sure this works.. -->
+    <script id="#article-template" type="text/x-handlebars-template">
+      <article data-category="{{category}}" data-author="{{author}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="">{{author}}</a></address>
+            published <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read More &rarr;</a>
+      </article>
+    </script>
     </head>
   <body>
     <header class="site-header clearfix">
@@ -41,6 +55,19 @@
            4. Author's URL
            5. Article category
            6. Some way to know if this article is a draft or is published -->
+    
+          <form id="new-article">
+            <input id="title" placeholder="Title of your article" />
+            <input id="author" placeholder="Authors name" />
+            <input id="authorUrl" placeholder="Author link" />
+            <input id="category" placeholder="Article category" />
+            <textarea id="body"></textarea>
+            <!-- <input id="publishedOn" placeholder="Title of your article" /> -->
+            <label for="publishedOn" type="checkbox">
+              <input type="text">
+              <span>words</span>
+            </label>
+          </form>
       </section>
 
       <section id="articles" class="tab-content">
@@ -49,6 +76,7 @@
 
       <section id="article-export">
         <!-- TODO: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
+        <input id="article-json" readonly />
       </section>
 
     </main>
