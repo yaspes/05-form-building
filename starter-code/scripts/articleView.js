@@ -75,22 +75,20 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
-articleView.initNewArticlePage = () => { //function not being called currently
+// 
+articleView.initNewArticlePage = () => { 
   // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
-
-  $('.tab-content').show(); //Added
+  $('.tab-content').show();
 
   // TODO: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
-
   $('#article-json').on('focus', function(){
     $(this).select();
     document.execCommand('copy');
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
-  $('#new-article').on('change', 'input, textarea', articleView.create); 
+  $('#new-article').on('change', 'input, textarea', articleView.create);
 };
 
 articleView.create = () => {
@@ -99,9 +97,7 @@ articleView.create = () => {
   $('#articles > *').remove();
 
   // TODO: Instantiate an article based on what's in the form fields:
-
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-  let artObj= {//obj literal with all form values
+  let artObj= {
     title: $('#title').val(),
     category: $('#category').val(),
     author: $('#author').val(),
@@ -110,6 +106,9 @@ articleView.create = () => {
     body: $('#body').val()
   };
   let article = new Article(artObj);
+  console.log(article);
+
+  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
 
   $(this).append(article.toHtml()); //rendering article on page
 
