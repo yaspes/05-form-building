@@ -48,10 +48,26 @@
   text-decoration: none;
 }
 
+#article-export {
+  float: right;
+}
+
+#article-export:after {
+  content: ' ';
+  display: 'table-cell';
+  clear: both;
+}
+
 #article-export label {
   font-size: .8em;
   font-style: italic;
   color: #ccc;
+}
+
+#article-export input {
+  display: block;
+  width: 40%;
+  opacity: .5;
 }
 
 @media only screen and (min-width: 640px) {
