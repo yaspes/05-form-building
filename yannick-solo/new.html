@@ -13,7 +13,7 @@
     <link>
     <!-- TODO: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
     <!-- Need "#article-template" here, Make sure this works.. -->
-    <script id="#article-template" type="text/x-handlebars-template">
+    <script id="article-template" type="text/x-handlebars-template">
       <article class="clearfix" data-category="{{category}}" data-author="{{author}}">
         <header>
           <h1>{{title}}</h1>
@@ -95,9 +95,9 @@
       // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-      articleView.initIndexPage();
+      articleView.initNewArticlePage();
       // COMMENT: What is this function doing? Why do we need it?
-      // PUT YOUR RESPONSE HERE
+      // Calling the initNewArticlePage here, populates the handlebars template with the user inputted data.
     </script>
   </body>
 </html>
